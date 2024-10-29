@@ -1,0 +1,75 @@
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background: url('https://i.gifer.com/J4o.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    margin-top: 20px;
+}
+
+h2 {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+    color: white;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+}
+
+/* Logout button */
+a[href="assets/database/logout.php"] {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a[href="assets/database/logout.php"]:hover {
+    background-color: #ff4c4c;
+}
