@@ -1,14 +1,10 @@
 <?php
 session_start();  
-
 include 'assets/database/config.php'; 
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit();
 }
-
-
 $sql = "SELECT u.user_id, u.username, u.email, u.fullname, p.profile_id 
         FROM users u 
         LEFT JOIN profiles p ON u.user_id = p.user_id 
@@ -25,7 +21,6 @@ $stmtJoin->close();
 
 $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +32,6 @@ $conn->close();
 </head>
 <body>
     <h1>Welcome to the Admin Dashboard</h1>
-
     <h2>Users and Profiles Information</h2>
     <table>
         <tr>
@@ -57,7 +51,6 @@ $conn->close();
             </tr>
         <?php endforeach; ?>
     </table>
-
     <div class="logout-button">
         <a href="assets/database/logout.php">Logout</a> 
     </div>

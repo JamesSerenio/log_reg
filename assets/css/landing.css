@@ -22,15 +22,15 @@ h2 {
     font-size: 1.5rem;
 }
 
-/* Table styling */
+
 table {
     width: 80%;
     border-collapse: collapse;
     margin: 20px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
-    border-radius: 10px; /* Optional: Add rounded corners */
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
+    border-radius: 10px; 
 }
 
 th, td {
@@ -41,23 +41,22 @@ th, td {
 }
 
 th {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
     color: white;
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 tr:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-    backdrop-filter: blur(10px); /* Adds blur for a frosted effect */
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
 }
 
-/* Logout button */
 a[href="assets/database/logout.php"] {
     display: inline-block;
     margin: 20px;
