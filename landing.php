@@ -31,8 +31,7 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to the Admin Dashboard</h1>
-    <h2>Users and Profiles Information</h2>
+    <h1>Users and Profiles Information Dashboard</h1>
     <table>
         <tr>
             <th>User ID</th>
