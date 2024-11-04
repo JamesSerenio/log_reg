@@ -29,7 +29,6 @@ window.onclick = function(event) {
 // Check if 'registered=success' is in the URL to show the modal automatically after registration
 if (window.location.search.includes('registered=success')) {
     modal.style.display = "block";
-    // Automatically flip back to login after successful registration
     document.querySelector('.flip-card').classList.remove('flipped');
 }
 

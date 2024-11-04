@@ -1,18 +1,17 @@
 <?php
 session_start();
-include 'config.php'; // Ensure this path is correct
+include 'config.php';
 
-// Retrieve form data
+
 $fullname = $_POST['fullname'];
 $username = $_POST['username'];
 $email = $_POST['email'];
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash password for security
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
-// Start transaction
+
 $conn->begin_transaction();
 
 try {
-    // Prepare and execute the insert statement for the user
     $sql = "INSERT INTO users (fullname, username, email, password) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssss", $fullname, $username, $email, $password);
@@ -21,11 +20,9 @@ try {
         throw new Exception("Error inserting user: " . $stmt->error);
     }
 
-    // Get the last inserted user ID
     $userId = $stmt->insert_id;
 
-    // Prepare and execute the insert statement for the profile
-    $sqlProfile = "INSERT INTO profiles (user_id) VALUES (?)"; // Removed full_name from here
+    $sqlProfile = "INSERT INTO profiles (user_id) VALUES (?)";
     $stmtProfile = $conn->prepare($sqlProfile);
     $stmtProfile->bind_param("i", $userId);
 
@@ -33,19 +30,17 @@ try {
         throw new Exception("Error inserting profile: " . $stmtProfile->error);
     }
 
-    // Commit the transaction
     $conn->commit();
 
     $_SESSION['registration_success'] = true;
     header("Location: ../../index.php");
 } catch (Exception $e) {
-    // Rollback the transaction in case of an error
     $conn->rollback();
     echo "Registration failed: " . $e->getMessage();
 } finally {
     $stmt->close();
     if (isset($stmtProfile)) {
-        $stmtProfile->close(); // Check if the statement was created
+        $stmtProfile->close(); 
     }
     $conn->close();
 }
